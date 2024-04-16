@@ -12,7 +12,10 @@ import session from "express-session";
 
 const app = express()
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
-mongoose.connect(CONNECTION_STRING);
+mongoose.connect(CONNECTION_STRING)
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch(err => console.error("MongoDB connection error:", err));
+
 
 
 app.use(
