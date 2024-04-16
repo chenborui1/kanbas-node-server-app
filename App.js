@@ -21,7 +21,7 @@ mongoose.connect(CONNECTION_STRING)
 app.use(
   cors({
     credentials: true,
-    origin: [process.env.FRONTEND_URL, 'https://a6--kanbas-react-app-4550.netlify.app']
+    origin: process.env.FRONTEND_URL
 
   })
 );
