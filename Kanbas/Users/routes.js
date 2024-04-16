@@ -63,10 +63,14 @@ export default function UserRoutes(app) {
 
   const profile = (req, res) => {
     const currentUser = req.session["currentUser"];
+
     if (!currentUser) {
+      
       res.sendStatus(401);
+      console.log("found the problem")
       return;
     }
+    console.log("im not running")
     res.json(currentUser);
   };
 
