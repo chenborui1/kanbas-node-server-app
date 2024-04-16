@@ -49,6 +49,7 @@ export default function UserRoutes(app) {
       req.session["currentUser"] = currentUser;
       res.json(currentUser);
     } else {
+      console.log("incorrect username")
       res.sendStatus(401);
     }
   };
