@@ -38,6 +38,7 @@ export default function UserRoutes(app) {
     }
     const currentUser = await dao.createUser(req.body);
     req.session["currentUser"] = currentUser;
+    currentGlobalUser = currentUser;
     res.json(currentUser);
   };
 
